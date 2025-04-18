@@ -33,14 +33,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       // ignore: avoid_print
       print("Token being sent: $token");
 
-      if (token == null) {
-        setState(() {
-          errorMessage = "Not logged in.";
-          isLoading = false;
-        });
-        return;
-      }
-
       final profileUrl = Uri.parse('$baseUrl/auth/profile');
       final response = await http.get(
         profileUrl,
